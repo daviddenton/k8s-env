@@ -1,26 +1,7 @@
 apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "0"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
-  name: docker-registry
-spec:
- rules:
-  - host: docker-registry
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: docker-registry
-          servicePort: 5000
----
-
-apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: docker-registry
+  name: k8s-env-docker-registry
 spec:
   replicas: 1
   selector:
@@ -48,8 +29,9 @@ spec:
       volumes:
         - name: image-store
           hostPath:
-            path: /tmp/docker
+            path: /tmp/k8s-env/registry
             type: DirectoryOrCreate
+
 ---
 
 kind: Service

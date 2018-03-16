@@ -2,3 +2,6 @@ dependencies:
   - name: nginx-ingress
     version: ">0.0.0"
     repository: "@stable"
+  - name: chartmuseum
+    version: ">0.0.0"
+    repository: "@incubator"
