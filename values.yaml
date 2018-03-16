@@ -1,0 +1,9 @@
+chartmuseum:
+  persistence:
+    enabled: true
+    size: 1Gi
+  env:
+    open:
+      DISABLE_API: false
+      DISABLE_METRICS: false
+      ALLOW_OVERWRITE: true

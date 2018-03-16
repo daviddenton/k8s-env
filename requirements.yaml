@@ -5,3 +5,6 @@ dependencies:
   - name: chartmuseum
     version: ">0.0.0"
     repository: "@incubator"
+  - name: heapster
+    version: ">0.0.0"
+    repository: "@stable"
